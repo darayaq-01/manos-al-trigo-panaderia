@@ -45,7 +45,7 @@ const Home = () => {
 
   return (
     <div
-      className={`dark:bg-my-background dark:text-gray-100 ${
+      className={`dark:bg-[#0e7490] dark:text-gray-100 ${
         !toggle ? null : 'inset-0 absolute'
       }`}
     >
