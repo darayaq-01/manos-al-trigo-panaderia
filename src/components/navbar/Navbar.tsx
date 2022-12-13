@@ -16,7 +16,7 @@ interface NavbarState {
 
 function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
   return (
-    <nav className="relative z-50 flex flex-wrap items-center justify-between isolate pt-2 sm:px-10">
+    <nav className="relative flex flex-wrap items-center justify-between isolate pt-2 sm:px-10">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         {/* logo */}
         <Link
@@ -76,7 +76,7 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
         <div
           className={`fixed bg-gradient-to-r from-my-primary-800 via-my-primary-700 to-my-primary/[.85] w-3/5 min-h-screen shadow-lg shadow-my-primary/60 ${
             toggle ? 'left-0' : '-left-full '
-          } top-0 uppercase transition-all duration-500 sm:hidden flex flex-col px-3 z-40 `}
+          } top-0 uppercase transition-all duration-500 sm:hidden flex flex-col px-3`}
         >
           <div className="flex justify-between items-center pt-2 mb-8">
             {/* imagen */}
