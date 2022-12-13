@@ -1,170 +1,42 @@
-# Tech
+> Note: this project is still in-progress
 
--   Vite
--   Preact
--   Taiwindcss
+# Manos al Trigo
 
-### estructura
+## Deploy
 
-| Header
-|-- Navbar
-|.....(Nabvar inicial)
-|.....(Nabvar scroll - fixed)
-|.....(Nabvar responsive)
-|-- links:
-|-- Hero
-|----- texto
-|----- imagen
-| Home
-|-- Offers: las ofertas de la semana
-|-- Manufacture: cómo hacemos el pan
-| Footer
-|-- contacto
-|-- privacy and copyleft
+Please visit:
 
-## Notes
+# About the project
 
-> -poner info generica-
-> decidir fuentes y colores
-> navbar
+## Preview
 
-### Datos de contacto
+## Features
 
--   https://www.instagram.com/manos.altrigo/
--   +56 962025526
+## Stack
 
-## Plan de trabajo
+- Preact as UI Library
+- TypeScript as typed development language
+- Tailwind CSS is used for styling
+- Vite fro building and development server
 
-1. Hero
+## Linter
 
-[x] botons con hover
-[] botones conectados
-[x] imagen centrar
-[x] determinar colores
-[x] determinar fuente
-[x] componetizar los botones
+This project is following the..
 
-2. Navbar
+# How to use
 
-[] determinar fuente
-[x] manu responsive funcional
-[] elementos del menu: home / ofertas / blog / contacto
-[x] menu fijo al scrollear
-[] texto logo -> logo imagen al escrollear en el menu fijo
-[] transformar logo/menu a svg (6)
+## prerequisites
 
-2.1 Navbar responsive
+- Node 16.0
 
-[] revisar el width
-[] bg color
+## Installation
 
-2.2 Navbar Scroll
+## Install dependencies
 
-[] bg color
-[] disgn
+# Contributing
 
-3. Offers
+Contributions, issues and feature requests are welcome! Feel free to check issues page.
 
-Note: array de objetos desde la BD...
+# Credits
 
-[] crear fake data API: Nombre, ingredientes, precio, alergías...
-[]
-
-4. Manufacture
-
-Note: tipo blog
-
-5. footer
-
-Notes: datos de contact, socnet, dev with love for darayaq. Foto nacho?
-
-[] revisar ancho
-
-X. Final
-
-[] probar test
-[] revisar por velocidad de carga
-[] obsoletos
-[] quizá animar un poco la imagen del logo al inicio?
-[] extraer interfaces
-[] dejar componentes sin lógica
-[] eslin properties
-[] updates
-
----
-
-NAVBAR
-_desktop_
-
--   no logo/texto
--   al scrollear cambia y sale el logo y se queda fijo
--   links desplegados
-
-_otros tamanos_
-
--   logo
--   links en hamburger
-
-## Fonts
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chonburi&display=swap" rel="stylesheet">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Chonburi&display=swap');
-</style>
-
-    font-family: 'Chonburi', cursive;
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-</style>
-
-font-family: 'Libre Baskerville', serif;
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap" rel="stylesheet">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Sans&display=swap');
-</style>
-
-font-family: 'Port Lligat Sans', sans-serif;
-
-## colors
-
-default: bg-gray-800
-
-color masa: #FAF1DC
-#D6D138 - #D9BB29
-#70ED4A - #68F04D
-#38D68A - #32D9DB
-#3EC9F0 - #3725F5
-
-## linter
-
-1- install standard -D
-"eslintConfig": {
-"extends": [
-"./node_modules/standard/eslintrc.json"
-]
-}
-
-## add to json
-
-"repository": {
-"type": "git",
-"url": "https://github.com/chandrakumarreddy/vite-ts-preact-tailwind-template"
-},
-
-## Notes
-
--   Para importar las imagenes he debido utilizar `const boo = require('../boo.jpg') en vez de import boo from "../boo.jpg` debido a un problema con types declarations.ts(2307)
+# License

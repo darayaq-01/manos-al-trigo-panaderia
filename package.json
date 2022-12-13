@@ -21,10 +21,11 @@
     "pretty": "prettier --write \"./**/*.{js,jsx,json}\"",
     "lint": "eslint --ext src/**/*.ts,tsx --ignore-path .gitignore .",
     "lint:fix": "eslint --ext .ts,tsx --ignore-path .gitignore . --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"      
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
-    "preact": "10.10.6"
+    "preact": "10.10.6",
+    "preact-router": "^4.1.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "2.3.0",
