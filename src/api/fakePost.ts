@@ -16,7 +16,7 @@ interface myBlog {
 export const entries: myBlog[] = [
   {
     id: 1,
-    title: 'random',
+    title: 'random1',
     subtitle: 'sub',
     categories: ['pan'],
     tags: ['salado'],
@@ -26,7 +26,7 @@ export const entries: myBlog[] = [
   },
   {
     id: 1,
-    title: 'random',
+    title: 'random2',
     subtitle: 'sub',
     categories: ['pan'],
     tags: ['salado'],
@@ -36,7 +36,7 @@ export const entries: myBlog[] = [
   },
   {
     id: 1,
-    title: 'random',
+    title: 'random3',
     subtitle: 'sub',
     categories: ['pan'],
     tags: ['salado'],
