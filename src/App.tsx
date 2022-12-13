@@ -1,24 +1,15 @@
-import Footer from './components/footer/Footer'
-import Header from './components/Header'
-import Hero from './components/hero/Hero'
-import Home from './components/Home'
+import { Route, Router } from 'preact-router'
 
-const title = (
-  <>
-    <span className="dark:text-my-primary">Manos al Trigo</span>, la panadería
-    artesanal de Valdivia
-  </>
-)
-const subtitle = <em>Pan de pueblo, pan con masa madre, pizzas y pasteleria</em>
+import Home from './components/Home'
+// acá se importaría luego el blog, por ejemplo
+// también el acceso al dashboard.
 
 export function App() {
   return (
     <main>
-      <Header>
-        <Hero title={title} subtitle={subtitle} />
-      </Header>
-      <Home />
-      <Footer />
+      <Router>
+        <Route path="/" component={Home} />
+      </Router>
     </main>
   )
 }

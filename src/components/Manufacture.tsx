@@ -1,5 +1,5 @@
+import { Link } from 'preact-router'
 import { entries } from '../api/fakePost'
-// const imgEntries1 = require('../assets/revisando-masa.jpg')
 import imgEntries1 from '../assets/revisando-masa.jpg'
 
 interface toBlog {
@@ -51,26 +51,15 @@ function Manufacture({ title, link, text }: toBlog) {
           )
         })}
       </div>
-
       {/* link ver más */}
-
-      <a
+      <Link
         rel="noopener noreferrer"
         href={link}
-        className="flex justify-center px-8 py-3 mt-3 text-sm font-semibold rounded-sm dark:bg-my-primary dark:text-gray-900
+        className="flex justify-center px-8 py-3 mt-4 text-sm font-semibold rounded-sm dark:bg-my-primary dark:text-gray-900
         leading-tight uppercase shadow-md hover:dark:bg-my-primary-700 hover:shadow-lg hover:text-white focus:dark:bg-my-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:dark:bg-my-primary-800 active:shadow-lg transition duration-150 ease-in-out"
       >
         {text} &gt;
-      </a>
-
-      {/* <a rel='noopener noreferrer hover:dark:bg-my-primary-700' href={link}>
-        <div
-          className='flex justify-center p-4
-        self-start px-3 py-2 mt-6 text-sm font-bold rounded-sm dark:bg-my-primary dark:text-gray-900  lg:w-1/3 mx-auto'
-        >
-          {text} &gt;
-        </div>
-      </a> */}
+      </Link>
     </section>
   )
 }

@@ -1,4 +1,4 @@
-// const img1 = require('../assets/nacho-pan.jpg')
+import { Link } from 'preact-router'
 import img1 from '../../assets/nacho-pan.jpg'
 
 const yearPresent = new Date().getFullYear() || 2022
@@ -29,7 +29,7 @@ const DATA_FOOTER = {
   social: {
     facebookImg: (
       <svg
-        className="h-4 w-4"
+        className="h-10 w-10"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -44,7 +44,7 @@ const DATA_FOOTER = {
     facebookLink: 'https://www.instagram.com/manos.altrigo/',
     instagramImg: (
       <svg
-        className="h-4 w-4"
+        className="h-10 w-10"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -80,77 +80,80 @@ const menuFoot: TypeMenuFoot[] = [
 const Column1 = () => (
   <div>
     <p className="font-medium">
-      <span className="text-xs uppercase tracking-widest"> Llama al: </span>
-      <a className="block text-2xl hover:opacity-75 sm:text-3xl mb-2" href="">
+      <span className=" sm:space-y-4 text-base uppercase tracking-widest">
+        {' '}
+        Llama al:{' '}
+      </span>
+      <Link
+        className="block text-2xl hover:opacity-75 sm:text-3xl mb-6"
+        href=""
+      >
         {DATA_FOOTER.paraPedidos.telefono}
-      </a>
-      <span className="text-xs uppercase tracking-widest"> o a través de </span>
+      </Link>
 
-      <a
+      <span className="text-base uppercase tracking-widest">
+        {' '}
+        o a través de{' '}
+      </span>
+
+      <Link
         className="block text-2xl hover:opacity-75 sm:text-3xl"
         href={DATA_FOOTER.paraPedidos.whatsapp}
       >
         Whatsapp
-      </a>
+      </Link>
     </p>
 
-    <ul className="mt-8 space-y-2 text-sm">
+    <ul className="mt-8 space-y-2 text-base">
       <li>{DATA_FOOTER.paraPedidos.disponibilidad}</li>
     </ul>
   </div>
 )
 
 const Column2 = () => (
-  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-    <div>
-      {/* SocNets */}
-      <div className="flex gap-3">
-        <a
-          className="rounded-full border border-white/25 p-2 hover:opacity-75"
-          href={DATA_FOOTER.social.facebookLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="sr-only"> Facebook </span>
+  <div className="grid grid-cols-1 gap-12">
+    {/* SocNets */}
+    <div className="flex gap-3 h-14">
+      <Link
+        className="rounded-full border border-white/25 p-2 hover:opacity-75"
+        href={DATA_FOOTER.social.facebookLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="sr-only"> Facebook </span>
+        {DATA_FOOTER.social.facebookImg}
+      </Link>
 
-          {DATA_FOOTER.social.facebookImg}
-        </a>
+      <Link
+        className="rounded-full border border-white/25 p-2 hover:opacity-75"
+        href={DATA_FOOTER.social.instagramLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span className="sr-only"> Instagram </span>
 
-        <a
-          className="rounded-full border border-white/25 p-2 hover:opacity-75"
-          href={DATA_FOOTER.social.instagramLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className="sr-only"> Instagram </span>
-
-          {DATA_FOOTER.social.instagramImg}
-        </a>
-      </div>
-
-      {/* Nenu */}
-
-      <nav className="mt-4 flex flex-col space-y-2 text-sm text-gray-300">
-        {menuFoot.map((menu) => (
-          <div key={menu}>
-            <a className="hover:opacity-75" href="">
-              {menu.contacto}
-            </a>
-            <a className="hover:opacity-75" href="">
-              {menu.faq}
-            </a>
-            <a className="hover:opacity-75" href="">
-              {menu.privacy}
-            </a>
-          </div>
-        ))}
-      </nav>
+        {DATA_FOOTER.social.instagramImg}
+      </Link>
     </div>
+
+    {/* Menu */}
+    <nav className="mt-6 space-y-2 text-sm text-gray-300">
+      {menuFoot.map((menu) => (
+        <ul key={menu} className="flex flex-col text-base space-y-2">
+          <Link className="hover:opacity-75" href="">
+            {menu.faq}
+          </Link>
+          <Link className="hover:opacity-75" href="">
+            {menu.privacy}
+          </Link>
+        </ul>
+      ))}
+    </nav>
   </div>
 )
 
 const Footer = () => (
-  <footer className="mx-auto bg-my-secondary-900 text-white lg:grid lg:grid-cols-6">
+  <footer className="mx-auto bg-my-secondary-900 text-white sm:grid sm:grid-cols-6">
     <aside className="hidden lg:relative lg:col-span-2 lg:block">
       <img
         alt={DATA_FOOTER.imgs.alt}
@@ -159,22 +162,25 @@ const Footer = () => (
       />
     </aside>
 
-    <div className="px-4 pt-16 pb-4 sm:px-6 lg:col-span-4 lg:px-8">
+    <div className="px-4 pt-16 pb-4 sm:px-6 sm:col-span-4 lg:px-8">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
         <Column1 />
         <Column2 />
         {/* Credits */}
-        <div className="mt-12 border-t border-gray-800 pt-4">
-          <div className="font-mono text-xs text-gray-300 opacity-90 sm:flex sm:items-center sm:justify-between">
-            <div className="flex gap-3">
-              Made fir
-              <a className="hover:opacity-75" href="">
-                {' '}
-                darayaq{' '}
-              </a>
-            </div>
-            <p className="mt-4 sm:mt-0">
-              {yearPresent}, {DATA_FOOTER.textos.nombreEmpresa}
+        <div className="mt-12 border-t border-gray-800 pt-4 sm:col-span-2">
+          <div className="font-mono text-xs text-gray-300 opacity-90 flex flex-wrap  sm:justify-between">
+            <p>
+              {yearPresent}, <em>{DATA_FOOTER.textos.nombreEmpresa}</em>
+            </p>
+            <p>
+              {' '}
+              Desarrollado con ❤️ por{' '}
+              <Link
+                className="hover:opacity-75 border-b-2 hover:shadow-md hover:shadow-red-600 border-solid border-red-600"
+                href="https://github.com/darayaq-01/manos-al-trigo-panaderia"
+              >
+                darayaq
+              </Link>
             </p>
           </div>
         </div>

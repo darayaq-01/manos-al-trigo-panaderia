@@ -1,3 +1,4 @@
+import { Link } from 'preact-router'
 import ImgOffer1 from '../assets/donouts.jpg'
 
 // Fake data api
@@ -14,10 +15,10 @@ const Offers = ({ title, subtitle, link }: offersHeading) => (
     <div className="container p-6 py-20 mx-auto rounded lg:px-8 dark:bg-my-secondary-900">
       <h2 className="text-5xl font-fheading font-bold text-center">{title}</h2>
 
-      <div className="flex justify-center p-4">
-        <a rel="noopener noreferrer" href={link}>
+      <div className="flex text-lg justify-center p-4">
+        <Link rel="noopener noreferrer" href={link}>
           {subtitle} &gt;
-        </a>
+        </Link>
       </div>
 
       <img
