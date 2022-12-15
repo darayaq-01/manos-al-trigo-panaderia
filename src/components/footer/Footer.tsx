@@ -80,12 +80,12 @@ const menuFoot: TypeMenuFoot[] = [
 const Column1 = () => (
   <div>
     <p className="font-medium">
-      <span className=" sm:space-y-4 text-base uppercase tracking-widest">
+      <span className=" text-base uppercase tracking-widest sm:space-y-4">
         {' '}
         Llama al:{' '}
       </span>
       <Link
-        className="block text-2xl hover:opacity-75 sm:text-3xl mb-6"
+        className="mb-6 block text-2xl hover:opacity-75 sm:text-3xl"
         href=""
       >
         {DATA_FOOTER.paraPedidos.telefono}
@@ -113,7 +113,7 @@ const Column1 = () => (
 const Column2 = () => (
   <div className="grid grid-cols-1 gap-12">
     {/* SocNets */}
-    <div className="flex gap-3 h-14">
+    <div className="flex h-14 gap-3">
       <Link
         className="rounded-full border border-white/25 p-2 hover:opacity-75"
         href={DATA_FOOTER.social.facebookLink}
@@ -139,7 +139,7 @@ const Column2 = () => (
     {/* Menu */}
     <nav className="mt-6 space-y-2 text-sm text-gray-300">
       {menuFoot.map((menu) => (
-        <ul key={menu} className="flex flex-col text-base space-y-2">
+        <ul key={menu} className="flex flex-col space-y-2 text-base">
           <Link className="hover:opacity-75" href="">
             {menu.faq}
           </Link>
@@ -153,7 +153,7 @@ const Column2 = () => (
 )
 
 const Footer = () => (
-  <footer className="mx-auto bg-my-secondary-900 text-white sm:grid sm:grid-cols-6">
+  <footer className="mx-auto bg-mysecondary text-white sm:grid sm:grid-cols-6">
     <aside className="hidden lg:relative lg:col-span-2 lg:block">
       <img
         alt={DATA_FOOTER.imgs.alt}
@@ -162,13 +162,13 @@ const Footer = () => (
       />
     </aside>
 
-    <div className="px-4 pt-16 pb-4 sm:px-6 sm:col-span-4 lg:px-8">
+    <div className="px-4 pt-16 pb-4 sm:col-span-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
         <Column1 />
         <Column2 />
         {/* Credits */}
         <div className="mt-12 border-t border-gray-800 pt-4 sm:col-span-2">
-          <div className="font-mono text-xs text-gray-300 opacity-90 flex flex-wrap  sm:justify-between">
+          <div className="flex flex-wrap font-mono text-xs text-gray-300 opacity-90  sm:justify-between">
             <p>
               {yearPresent}, <em>{DATA_FOOTER.textos.nombreEmpresa}</em>
             </p>
@@ -176,7 +176,7 @@ const Footer = () => (
               {' '}
               Desarrollado con ❤️ por{' '}
               <Link
-                className="hover:opacity-75 border-b-2 hover:shadow-md hover:shadow-red-600 border-solid border-red-600"
+                className="border-b-2 border-solid border-red-600 hover:opacity-75 hover:shadow-md hover:shadow-red-600"
                 href="https://github.com/darayaq-01/manos-al-trigo-panaderia"
               >
                 darayaq

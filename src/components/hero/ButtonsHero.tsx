@@ -14,19 +14,19 @@ const ButtonsHero = ({
   secondBtnLink
 }: ButtonsHeroInt) => {
   return (
-    <div className="flex flex-col space-y-4 sm:items-center sm:flex-row sm:space-y-0 sm:space-x-4 sm:justify-start">
+    <div className="flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-start sm:space-y-0 sm:space-x-4">
       <a
         rel="noopener noreferrer"
         href={firstBtnlink}
-        className="px-8 py-3 text-lg font-semibold rounded dark:bg-my-primary dark:text-my-secondary-900
-        leading-tight uppercase shadow-md hover:dark:bg-my-primary-700 hover:shadow-lg hover:text-white focus:dark:bg-my-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:dark:bg-my-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="text-mysecondary rounded bg-myprimary px-8 py-3 text-lg font-semibold
+        uppercase leading-tight shadow-md transition duration-150 ease-in-out hover:bg-myprimary-700 hover:text-white hover:shadow-lg focus:bg-myprimary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-myprimary-800 active:shadow-lg"
       >
         {firstBtnText}
       </a>
       <a
         rel="noopener noreferrer"
         href={secondBtnLink}
-        className="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-100 leading-tight uppercase shadow-md hover:dark:bg-my-primary-700 hover:shadow-lg hover:border-my-primary-700 focus:dark:bg-my-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:dark:bg-my-primary-800 active:shadow-lg focus:border-my-primary-700 transition duration-150 ease-in-out"
+        className="rounded border border-gray-100 px-8 py-3 text-lg font-semibold uppercase leading-tight shadow-md transition duration-150 ease-in-out hover:border-myprimary-700 hover:bg-myprimary-700 hover:shadow-lg focus:border-myprimary-700 focus:bg-myprimary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-myprimary-800 active:shadow-lg"
       >
         {secondBtnText}
       </a>

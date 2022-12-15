@@ -9,7 +9,7 @@ import Footer from '../components/footer/Footer'
 // hero
 const title = (
   <>
-    <h1 className="dark:text-my-primary">Manos al Trigo</h1>
+    <h1 className="text-myprimary">Manos al Trigo</h1>
     <h1>Panadería artesanal de Valdivia</h1>
   </>
 )
@@ -45,8 +45,8 @@ const Home = () => {
 
   return (
     <div
-      className={`dark:bg-[#0e7490] dark:text-gray-100 ${
-        !toggle ? null : 'inset-0 absolute'
+      className={`bg-background text-gray-100 ${
+        !toggle ? null : 'absolute inset-0'
       }`}
     >
       <Navbar
@@ -54,7 +54,7 @@ const Home = () => {
         setToggle={setToggle}
         showOnScroll={showOnScroll}
       />
-      <div className="px-[1.15rem] sm:px-11 lg:px-28 pb-8 space-y-8 z-0">
+      <div className="z-0 space-y-8 px-[1.15rem] pb-8 sm:px-11 lg:px-28">
         <Hero title={title} subtitle={subtitle} />
         <main>
           <div className="container mx-auto space-y-16">

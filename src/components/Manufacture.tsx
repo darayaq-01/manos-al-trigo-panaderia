@@ -11,26 +11,26 @@ interface toBlog {
 function Manufacture({ title, link, text }: toBlog) {
   return (
     <section>
-      <h2 className="my-3 pb-7 text-5xl font-fheading font-bold text-center">
+      <h2 className="my-3 pb-7 text-center font-fheading text-5xl font-bold">
         {title}
       </h2>
       <div className="grid gap-6 lg:grid-cols-3">
         {/* destacado */}
-        <div className="overflow-hidden rounded lg:flex lg:col-span-3">
+        <div className="overflow-hidden rounded lg:col-span-3 lg:flex">
           <img
             src={imgEntries1}
             alt=""
-            className="object-cover w-full h-auto max-h-96 dark:bg-gray-500"
+            className="h-auto max-h-96 w-full bg-gray-500 object-cover"
           />
-          <div className="p-6 space-y-6 lg:p-8 md:flex md:flex-col dark:bg-my-secondary-900">
-            <span className="self-start px-3 py-1 text-sm rounded-full dark:bg-my-primary dark:text-gray-900">
+          <div className="bg-mysecondary space-y-6 p-6 md:flex md:flex-col lg:p-8">
+            <span className="self-start rounded-full bg-myprimary px-3 py-1 text-sm text-gray-900">
               Business
             </span>
-            <h2 className="text-3xl font-fheading md:flex-1">
+            <h2 className="font-fheading text-3xl md:flex-1">
               Curating a workplace that inspires team movement
             </h2>
             <div>
-              <p className="dark:text-gray-400">November 12</p>
+              <p className="text-gray-400">November 12</p>
             </div>
           </div>
         </div>
@@ -39,14 +39,14 @@ function Manufacture({ title, link, text }: toBlog) {
         {entries.map((entry) => {
           return (
             <div
-              className="p-6 rounded lg:p-8 lg:py-12 dark:bg-my-secondary-900"
+              className="bg-mysecondary rounded p-6 lg:p-8 lg:py-12"
               key={entry.title}
             >
-              <h3 className="font-fheading font-bold text-xl dark:text-gray-50">
+              <h3 className="font-fheading text-xl font-bold text-gray-50">
                 {entry.title}
               </h3>
               <p className="inline">{entry.content}</p>
-              <p className="dark:text-gray-400">{entry.date}</p>
+              <p className="text-gray-400">{entry.date}</p>
             </div>
           )
         })}
@@ -55,8 +55,8 @@ function Manufacture({ title, link, text }: toBlog) {
       <Link
         rel="noopener noreferrer"
         href={link}
-        className="flex justify-center px-8 py-3 mt-4 text-sm font-semibold rounded-sm dark:bg-my-primary dark:text-gray-900
-        leading-tight uppercase shadow-md hover:dark:bg-my-primary-700 hover:shadow-lg hover:text-white focus:dark:bg-my-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:dark:bg-my-primary-800 active:shadow-lg transition duration-150 ease-in-out"
+        className="mt-4 flex justify-center rounded-sm bg-myprimary px-8 py-3 text-sm font-semibold uppercase
+        leading-tight text-gray-900 shadow-md transition duration-150 ease-in-out hover:bg-myprimary-700 hover:text-white hover:shadow-lg focus:bg-myprimary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-myprimary-800 active:shadow-lg"
       >
         {text} &gt;
       </Link>
