@@ -1,5 +1,5 @@
 import { Link } from 'preact-router'
-import img1 from '../../assets/nacho-pan.jpg'
+import img1 from '../../assets/nacho-pan.webp'
 
 const yearPresent = new Date().getFullYear() || 2022
 
