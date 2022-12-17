@@ -39,6 +39,7 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
         <button
           className="flex justify-end p-4 sm:hidden "
           onClick={() => setToggle((prev: any) => !prev)}
+          aria-label="Toggle"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,14 +62,16 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
         <div className="hidden gap-9 uppercase sm:flex sm:items-end sm:justify-center">
           {navLinks.map((link) => (
             <ul key={link.id}>
-              <Link
-                activeClassName="active"
-                className="mb-1			
+              <li>
+                <Link
+                  activeClassName="active"
+                  className="mb-1			
 				rounded border-b-2 p-4 py-3 text-lg text-white hover:border-y-2 hover:border-solid hover:border-myprimary-700 hover:text-myprimary-700 active:font-bold"
-                href={link.link}
-              >
-                {link.title}
-              </Link>
+                  href={link.link}
+                >
+                  {link.title}
+                </Link>
+              </li>
             </ul>
           ))}
         </div>
@@ -97,6 +100,7 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
             <button
               className="flex justify-end sm:hidden "
               onClick={() => setToggle((prev: any) => !prev)}
+              aria-label="toggle"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,13 +123,15 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
           <div className="flex w-5/6 max-w-sm flex-col overflow-y-auto py-10">
             {navLinks.map((link) => (
               <ul key={link.id} className="text-mysecondary text-lg ">
-                <Link
-                  activeClassName="active"
-                  className="text-mysecondary mb-1 block rounded border-y-2 border-transparent p-4 text-lg hover:border-y-2 hover:border-solid hover:border-background hover:text-background"
-                  href={link.link}
-                >
-                  {link.title}
-                </Link>
+                <li>
+                  <Link
+                    activeClassName="active"
+                    className="text-mysecondary mb-1 block rounded border-y-2 border-transparent p-4 text-lg hover:border-y-2 hover:border-solid hover:border-background hover:text-background"
+                    href={link.link}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
               </ul>
             ))}
           </div>
@@ -134,7 +140,7 @@ function Navbar({ toggle, setToggle, showOnScroll }: NavbarState) {
             <div className="pt-6">
               <Link
                 className="mb-3 block border-2 border-background px-4 py-3 text-center text-base font-semibold leading-loose tracking-wider text-background hover:border-solid hover:bg-background hover:text-lg hover:text-myprimary"
-                href="#!"
+                href="/"
               >
                 Login
               </Link>

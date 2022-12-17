@@ -86,7 +86,7 @@ const Column1 = () => (
       </span>
       <Link
         className="mb-6 block text-2xl hover:opacity-75 sm:text-3xl"
-        href=""
+        href={`tel${DATA_FOOTER.paraPedidos.telefono}`}
       >
         {DATA_FOOTER.paraPedidos.telefono}
       </Link>
@@ -97,7 +97,7 @@ const Column1 = () => (
       </span>
 
       <Link
-        className="block text-2xl hover:opacity-75 sm:text-3xl"
+        className="block text-2xl hover:opacity-75 sm:text-3xFAQ"
         href={DATA_FOOTER.paraPedidos.whatsapp}
       >
         Whatsapp
@@ -140,12 +140,16 @@ const Column2 = () => (
     <nav className="mt-6 space-y-2 text-sm text-gray-300">
       {menuFoot.map((menu) => (
         <ul key={menu} className="flex flex-col space-y-2 text-base">
-          <Link className="hover:opacity-75" href="">
-            {menu.faq}
-          </Link>
-          <Link className="hover:opacity-75" href="">
-            {menu.privacy}
-          </Link>
+          <li>
+            <Link className="hover:opacity-75" href="/">
+              {menu.faq}
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:opacity-75" href="/">
+              {menu.privacy}
+            </Link>
+          </li>
         </ul>
       ))}
     </nav>
@@ -159,6 +163,7 @@ const Footer = () => (
         alt={DATA_FOOTER.imgs.alt}
         src={DATA_FOOTER.imgs.img1}
         className="absolute inset-0 h-full w-full object-cover"
+        loading={'lazy'}
       />
     </aside>
 
