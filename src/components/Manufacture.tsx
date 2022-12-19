@@ -1,6 +1,6 @@
 import { Link } from 'preact-router'
 import { entries } from '../api/fakePost'
-import imgEntries1 from '../assets/revisando-masa.webp'
+import imgEntries1 from '../assets/images/revisando-masa.webp'
 
 interface toBlog {
   title: string

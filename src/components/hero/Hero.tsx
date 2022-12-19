@@ -1,6 +1,6 @@
 import ButtonsHero from './ButtonsHero'
 // const logo = require('../assets/pancito_logo-ready.svg')
-import logo from '../../assets/pancito_logo-ready.svg'
+import logo from '../../assets/images/logo/pancito_logo-ready.svg'
 
 import { JSX } from 'preact'
 

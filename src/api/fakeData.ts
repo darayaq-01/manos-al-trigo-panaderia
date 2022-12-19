@@ -1,7 +1,7 @@
 // test Imgs
 
-import productImg1 from '../assets/pan-en-bandeja.webp'
-import productImg2 from '../assets/sweets.webp'
+import productImg1 from '../assets/images/pan-en-bandeja.webp'
+import productImg2 from '../assets/images/sweets.webp'
 
 interface TypeMyData {
   id: number

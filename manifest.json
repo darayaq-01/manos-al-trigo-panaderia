@@ -1,0 +1,35 @@
+{
+  "short_name": "Manos al Trigo",
+  "name": "Manos al Trigo Panadería",
+  "icons": [
+    {
+      "src": "assets/images/icons/favicon-50.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/images/icons/favicon-144x144.webp",
+      "type": "image/svg+xml",
+      "sizes": "144x144"
+    },
+    {
+      "src": "assets/images/icons/favicon-512x512.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "assets/images/icons/favicon-192x192.svg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/images/icons/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

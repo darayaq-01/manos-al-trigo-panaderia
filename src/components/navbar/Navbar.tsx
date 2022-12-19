@@ -1,8 +1,8 @@
 import { Link } from 'preact-router'
 import { navLinks } from '../../constants'
 
-import logo2 from '../../assets/logo-text-only.svg'
-import logo from '../../assets/pancito_logo-ready.svg'
+import logo2 from '../../assets/images/logo/logo-text-only.svg'
+import logo from '../../assets/images/logo/pancito_logo-ready.svg'
 
 // esta interface está repetida
 // revisar los any

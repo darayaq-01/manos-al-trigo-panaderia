@@ -1,4 +1,4 @@
-const imgEntries1 = '../assets/revisando-masa.webp'
+const imgEntries1 = '../assets/images/revisando-masa.webp'
 
 // interface
 

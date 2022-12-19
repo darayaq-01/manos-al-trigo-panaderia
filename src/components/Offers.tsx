@@ -1,5 +1,5 @@
 import { Link } from 'preact-router'
-import ImgOffer1 from '../assets/donouts.webp'
+import ImgOffer1 from '../assets/images/donouts.webp'
 
 // Fake data api
 import { myData } from '../api/fakeData'
