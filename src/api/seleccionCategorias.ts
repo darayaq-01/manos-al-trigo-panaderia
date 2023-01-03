@@ -1,6 +1,6 @@
 import dulce from '../assets/images/dulce.webp'
 import pan from '../assets/images/pan3.webp'
-import salado from '../assets/images/pizzas.webp'
+import salado from '../assets/images/salado.webp'
 import imagenPrincipalOfertas from '../assets/images/muestra.webp'
 
 interface TypeMyData {

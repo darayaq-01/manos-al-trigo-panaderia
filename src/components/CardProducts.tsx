@@ -1,5 +1,3 @@
-import { FunctionComponent } from 'preact'
-
 interface TypeMyData {
     id: number
     img?: string
@@ -9,16 +7,16 @@ interface TypeMyData {
     price: number
 }
 
-const CardProducts: FunctionComponent<TypeMyData> = ({
+export default function CardProducts({
     img,
     name_product,
     description,
     price
-}) => {
+}: TypeMyData) {
     return (
-        <div className="bg-mysecondary flex flex-col space-y-4 px-2 py-4">
+        <div className="bg-mysecondary rounded-sm flex flex-col p-6 md:p-4 space-y-4">
             <img
-                className="rounded-bl-[3rem] rounded-tr-[3rem]"
+                className="rounded-bl-[3rem] h-fit rounded-tr-[3rem] shadow-gray-800 shadow-md "
                 src={img}
                 alt={name_product}
             />
@@ -36,5 +34,3 @@ const CardProducts: FunctionComponent<TypeMyData> = ({
         </div>
     )
 }
-
-export default CardProducts

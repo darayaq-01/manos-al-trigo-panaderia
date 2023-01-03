@@ -22,7 +22,7 @@ function Layout({ children }: ChildrenProps) {
     return (
         <div className="bg-[#0c0c0cee]">
             <div
-                className={`bg-background text-gray-100 lg:mx-auto lg:w-9/12 ${
+                className={`bg-background text-gray-100  lg:mx-auto lg:w-11/12 ${
                     !toggle ? null : 'absolute inset-0'
                 }`}
             >

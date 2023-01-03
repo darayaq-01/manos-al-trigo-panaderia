@@ -1,28 +1,45 @@
-import Layout from './Layout'
-import { productos } from '../api/productos'
+import { useContext, useState, useEffect } from 'preact/hooks'
+
+import Button from '../components/ButtonMenuCategorias'
 import CardProducts from '../components/CardProducts'
-import { useState } from 'preact/hooks'
+import Layout from './Layout'
 
-/* const noHayOfertas = (
-    <p className="self-start rounded-md bg-myprimary font-bold px-3 py-2 text-sm text-gray-900">
-        No tenemos ningún producto en oferta por el momento. Por favor regresa
-        más tarde o envianos un mensaje.
-    </p>
-) */
+import { productos } from '../api/productos'
 
-const Ofertas = () => {
-    const [filter, setFilter] = useState<string | null>(null)
+import { MessageContext } from '../utils/context'
+import { MessageState } from '../utils/types'
+
+interface TypeMyData {
+    id: number
+    img?: string
+    name_product: string
+    description?: string | null
+    category: 'panes' | 'salados' | 'dulces' | string
+    price: number
+}
+
+export default function Ofertas() {
+    const [message] = useContext<MessageState>(MessageContext)
+    const [filter, setFilter] = useState<string | null>(message || null)
+    const [filteredProductos, setFilteredProductos] = useState<TypeMyData[]>([])
+
+    const filterProductos = (products: TypeMyData[], filter: string | null) => {
+        if (!filter) return products
+        return products.filter((producto) => producto.category === filter)
+    }
+    console.log({ filter, message })
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    useEffect(() => {
+        setFilteredProductos(filterProductos(productos, filter))
+    }, [filter])
 
     const handleFilter = (category: string | null) => {
         setFilter(category)
     }
-
-    const filteredProductos = productos.filter((producto) => {
-        if (!filter) return true
-        return producto.category === filter
-    })
-
-    const borders = 'border-solid, border-red-600, border-2'
 
     return (
         <Layout>
@@ -32,38 +49,26 @@ const Ofertas = () => {
                         Ofertas del mes
                     </h2>
                 </div>
-                <div className="font-fbase font-medium text-lg py-4 ">
+                <div className="font-fbase sm:font-medium text-lg py-4">
                     Una selección de nuestros productos actualmente disponibles.
                     Si necesitas algo en particular, no dudes en preguntar.{' '}
                 </div>
-                {/* buttons options */}
-                <div className="flex justify-end pt-6 gap-2 border-b-2 border-solid border-mysecondary">
-                    <button
-                        className="self-start text-gray-100 bg-mysecondary hover:bg-myprimary font-bold px-2 py-1 text-sm hover:text-gray-900 border-x-2 border-t-2 border-solid border-mysecondary active:text-red-700"
-                        onClick={() => handleFilter(null)}
-                    >
-                        Todos
-                    </button>
-                    <button
-                        className="self-start text-gray-100 bg-mysecondary hover:bg-myprimary font-bold px-2 py-1 text-sm hover:text-gray-900 border-x-2 border-t-2 border-solid border-mysecondary"
+                <div className="flex justify-center sm:justify-end pt-6 gap-2 sm:border-b-2 border-solid border-mysecondary">
+                    <Button label="Todos" onClick={() => handleFilter(null)} />
+                    <Button
+                        label="Panes"
                         onClick={() => handleFilter('panes')}
-                    >
-                        Panes
-                    </button>
-                    <button
-                        className="self-start text-gray-100 bg-mysecondary hover:bg-myprimary font-bold px-2 py-1 text-sm hover:text-gray-900 border-x-2 border-t-2 border-solid border-mysecondary"
+                    />
+                    <Button
+                        label="Dulces"
                         onClick={() => handleFilter('dulces')}
-                    >
-                        Dulces
-                    </button>
-                    <button
-                        className="self-start text-gray-100 bg-mysecondary hover:bg-myprimary font-bold px-2 py-1 text-sm hover:text-gray-900 border-x-2 border-t-2 border-solid border-mysecondary"
+                    />
+                    <Button
+                        label="Salados"
                         onClick={() => handleFilter('salados')}
-                    >
-                        Salados
-                    </button>
+                    />
                 </div>
-                <div className="mt-2 grid sm:grid-cols-2 gap-4 md:grid-cols-3">
+                <div className="mt-4 grid sm:grid-cols-2 gap-4 md:grid-cols-3">
                     {filteredProductos.map((card) => (
                         <CardProducts
                             key={card.name_product}
@@ -80,36 +85,3 @@ const Ofertas = () => {
         </Layout>
     )
 }
-
-export default Ofertas
-
-/* 
-renderizar los butones:
-
-import { h, FunctionComponent } from 'preact';
-
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-}
-
-const Button: FunctionComponent<ButtonProps> = ({ label, onClick }) => (
-  <button
-    className="self-start text-gray-100 bg-mysecondary hover:bg-myprimary font-bold px-2 py-1 text-sm hover:text-gray-900 border-x-2 border-t-2 border-solid border-mysecondary"
-    onClick={onClick}
-  >
-    {label}
-  </button>
-);
-
-const FilterButtons = () => (
-  <div className="flex justify-end gap-2 border-b-2 border-solid border-mysecondary">
-    <Button label="Todos" onClick={() => handleFilter(null)} />
-    <Button label="Panes" onClick={() => handleFilter('panes')} />
-    <Button label="Dulces" onClick={() => handleFilter('dulces')} />
-    <Button label="Salados" onClick={() => handleFilter('salados')} />
-  </div>
-);
-
-
-*/
