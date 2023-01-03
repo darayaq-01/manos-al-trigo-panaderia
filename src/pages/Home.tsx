@@ -1,6 +1,6 @@
 import Hero from '../components/hero/Hero'
-import OfertasComponent from './OfertasComponent'
-import Layout from '../pages/Layout'
+import OfertasComponent from '../components/OfertasComponent'
+import Layout from './Layout'
 
 // hero
 const title = (
