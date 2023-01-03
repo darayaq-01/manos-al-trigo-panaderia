@@ -62,9 +62,10 @@ export default function OfertasComponent({
                             </p>
                             <p className="md:h-1/6">{data.description}</p>
                             <Link
-                                type="button"
                                 href="/ofertas"
-                                onClick={() => handleClick(data.name_product)}
+                                onClick={() =>
+                                    handleClick(data.name_product.toLowerCase())
+                                }
                                 className="self-start rounded-md bg-myprimary px-3 py-3 text-sm text-gray-900 cursor-pointer uppercase  hover:bg-myprimary-800 hover:text-gray-100 transition duration-500 ease-in-out"
                             >
                                 Ver Oferta{' '}

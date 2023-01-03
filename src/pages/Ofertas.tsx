@@ -30,18 +30,16 @@ export default function Ofertas() {
     console.log({ filter, message })
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    useEffect(() => {
         setFilteredProductos(filterProductos(productos, filter))
     }, [filter])
 
     const handleFilter = (category: string | null) => {
         setFilter(category)
     }
-
-    /* const filteredProductos = productos.filter((producto) => {
-        console.log({ filter, message })
-        if (!filter) return true
-        return producto.category === filter
-    }) */
 
     return (
         <Layout>
@@ -51,11 +49,11 @@ export default function Ofertas() {
                         Ofertas del mes
                     </h2>
                 </div>
-                <div className="font-fbase font-medium text-lg py-4">
+                <div className="font-fbase sm:font-medium text-lg py-4">
                     Una selección de nuestros productos actualmente disponibles.
                     Si necesitas algo en particular, no dudes en preguntar.{' '}
                 </div>
-                <div className="flex justify-end pt-6 gap-2 border-b-2 border-solid border-mysecondary">
+                <div className="flex justify-center sm:justify-end pt-6 gap-2 sm:border-b-2 border-solid border-mysecondary">
                     <Button label="Todos" onClick={() => handleFilter(null)} />
                     <Button
                         label="Panes"
@@ -70,7 +68,7 @@ export default function Ofertas() {
                         onClick={() => handleFilter('salados')}
                     />
                 </div>
-                <div className="mt-2 grid sm:grid-cols-2 gap-4 md:grid-cols-3">
+                <div className="mt-4 grid sm:grid-cols-2 gap-4 md:grid-cols-3">
                     {filteredProductos.map((card) => (
                         <CardProducts
                             key={card.name_product}
